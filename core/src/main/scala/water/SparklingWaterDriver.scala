@@ -17,6 +17,7 @@
 
 package water
 
+import org.apache.commons.lang3.time.FastDateFormat
 import org.apache.spark.h2o.{H2OConf, H2OContext}
 import org.apache.spark.{SparkConf, SparkSessionUtils}
 
@@ -39,6 +40,7 @@ object SparklingWaterDriver {
     // Start H2O cluster only
     val hc = H2OContext.getOrCreate(spark.sparkContext)
 
+    spark.sparkContext.parallelize(1 to 10).map(v => FastDateFormat.getInstance()).count()
     println(hc)
 
     // Infinite wait
