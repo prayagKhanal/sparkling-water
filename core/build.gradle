@@ -46,8 +46,11 @@ dependencies {
   // And use scalatest for Scala testing
   testCompile "org.scalatest:scalatest_${scalaBaseVersion}:2.2.1"
   testCompile "junit:junit:4.11"
+  testCompile "com.github.sakserv:hadoop-mini-clusters-yarn:0.1.11"
+    compile   "com.github.sakserv:hadoop-mini-clusters-yarn:0.1.11"
 
-  // Integration tests requirements
+
+    // Integration tests requirements
   integTestCompile "org.scalatest:scalatest_${scalaBaseVersion}:2.2.1"
   integTestCompile "junit:junit:4.11"
 
