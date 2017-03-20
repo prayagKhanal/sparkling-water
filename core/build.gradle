@@ -46,7 +46,7 @@ dependencies {
   // And use scalatest for Scala testing
   testCompile "org.scalatest:scalatest_${scalaBaseVersion}:2.2.1"
   testCompile "junit:junit:4.11"
-    
+
     // Integration tests requirements
   integTestCompile "org.scalatest:scalatest_${scalaBaseVersion}:2.2.1"
   integTestCompile "junit:junit:4.11"
