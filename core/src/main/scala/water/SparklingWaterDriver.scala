@@ -40,7 +40,8 @@ object SparklingWaterDriver {
     // Start H2O cluster only
     val hc = H2OContext.getOrCreate(spark.sparkContext)
 
-    spark.sparkContext.parallelize(1 to 10).map(v => FastDateFormat.getInstance()).count()
+    case class A( a: FastDateFormat)
+    spark.sparkContext.parallelize(1 to 3000000).map( _ => A(FastDateFormat.getInstance())).count()
     println(hc)
 
     // Infinite wait
