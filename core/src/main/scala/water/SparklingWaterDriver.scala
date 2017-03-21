@@ -41,14 +41,15 @@ object SparklingWaterDriver {
     val hc = H2OContext.getOrCreate(spark.sparkContext)
 
     case class A( a: FastDateFormat)
+
     spark.sparkContext.parallelize(1 to 30000, 4).map( _ => A(FastDateFormat.getInstance())).saveAsTextFile("aa")
 
 
     println( spark.sparkContext.textFile("aa", 3).count())
 
     // Infinite wait
-    this.synchronized(while (true) {
+    //this.synchronized(while (true) {
       //wait()
-    })
+    //})
   }
 }
